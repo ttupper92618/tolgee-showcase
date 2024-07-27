@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { Flex, Box, Table, Checkbox, Tbody, Td, Text, Th, Thead, Tr, useColorModeValue } from '@chakra-ui/react';
 import * as React from 'react';
 
@@ -102,6 +103,7 @@ export default function ColumnTable(props: { tableData: any }) {
 			)
 		})
 	];
+	// eslint-disable-next-line
 	const [ data, setData ] = React.useState(() => [ ...defaultData ]);
 	const table = useReactTable({
 		data,

@@ -104,6 +104,7 @@ export default function CheckTable(props: { tableData: any }) {
 			)
 		})
 	];
+	// eslint-disable-next-line
 	const [ data, setData ] = React.useState(() => [ ...defaultData ]);
 	const table = useReactTable({
 		data,

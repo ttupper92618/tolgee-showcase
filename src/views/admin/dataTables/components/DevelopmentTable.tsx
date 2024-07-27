@@ -64,7 +64,9 @@ export default function ComplexTable(props: { tableData: any }) {
 			),
 			cell: (info) => (
 				<Flex align='center'>
-					{info.getValue().map((item: string, key: number) => {
+					{
+					// eslint-disable-next-line
+					info.getValue().map((item: string, key: number) => {
 						if (item === 'apple') {
 							return <AppleLogo key={key} color={iconColor} me='16px' h='18px' w='15px' />;
 						} else if (item === 'android') {
@@ -114,6 +116,7 @@ export default function ComplexTable(props: { tableData: any }) {
 			)
 		})
 	];
+	// eslint-disable-next-line
 	const [ data, setData ] = React.useState(() => [ ...defaultData ]);
 	const table = useReactTable({
 		data,
