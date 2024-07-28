@@ -15,6 +15,7 @@
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
+    "@tolgee/i18next": "^5.28.6",
     "@tolgee/react": "^5.28.6",
     "@types/jest": "^25.2.3",
     "@types/node": "^12.20.55",
@@ -44,13 +45,15 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm:server\" \"npm:app\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "server": "node src/server/server.js",
+    "app": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -74,6 +77,9 @@
   },
   "devDependencies": {
     "@types/react-calendar": "^3.5.2",
-    "@types/react-router-dom": "^5.3.3"
+    "@types/react-router-dom": "^5.3.3",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
   }
 }
