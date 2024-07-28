@@ -3,16 +3,17 @@
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import AdminNavbarLinks from 'components/navbar/NavbarLinksAdmin';
+import { T } from '@tolgee/react';
 
 export default function AdminNavbar(props: {
 	secondary: boolean;
-	message: string|boolean;
+	message: string | boolean;
 	brandText: string;
 	logoText: string;
 	fixed: boolean;
 	onOpen: (...args: any[]) => any;
 }) {
-	const [ scrolled, setScrolled ] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener('scroll', changeNavbar);
@@ -22,7 +23,7 @@ export default function AdminNavbar(props: {
 		};
 	});
 
-	const { secondary,  brandText } = props;
+	const { secondary, brandText } = props;
 
 	// Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
 	let mainText = useColorModeValue('navy.700', 'white');
@@ -103,8 +104,8 @@ export default function AdminNavbar(props: {
 						</BreadcrumbItem>
 
 						<BreadcrumbItem color={secondaryText} fontSize='sm'>
-							<BreadcrumbLink href='#' color={secondaryText}>
-								{brandText}
+							<BreadcrumbLink href='#' color={secondaryText} transform='translateY(-3px)'>
+								<T keyName={`nav-page-${brandText}`}>{brandText}</T>
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 					</Breadcrumb>
@@ -125,17 +126,17 @@ export default function AdminNavbar(props: {
 						_focus={{
 							boxShadow: 'none'
 						}}>
-						{brandText}
+						<T keyName={`nav-title-${brandText}`}>{brandText}</T>
 					</Link>
 				</Box>
 				<Box ms='auto' w={{ sm: '100%', md: 'unset' }}>
 					<AdminNavbarLinks
-						onOpen={props.onOpen} 
+						onOpen={props.onOpen}
 						secondary={props.secondary}
-						fixed={props.fixed} 
+						fixed={props.fixed}
 					/>
 				</Box>
-			</Flex> 
+			</Flex>
 		</Box>
 	);
 }
