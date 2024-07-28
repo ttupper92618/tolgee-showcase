@@ -1,10 +1,10 @@
 /*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
+	_   _  ___  ____  ___ ________  _   _   _   _ ___   
  | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
  | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
  |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
  |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
+																																																																																																																																																																			 
 =========================================================
 * Horizon UI - v1.1.0
 =========================================================
@@ -43,7 +43,8 @@ import Avatar1 from 'assets/img/avatars/avatar1.png';
 import Avatar2 from 'assets/img/avatars/avatar2.png';
 import Avatar3 from 'assets/img/avatars/avatar3.png';
 import Avatar4 from 'assets/img/avatars/avatar4.png';
-import tableDataTopCreators from 'views/admin/marketplace/variables/tableDataTopCreators'; 
+import tableDataTopCreators from 'views/admin/marketplace/variables/tableDataTopCreators';
+import { T } from "@tolgee/react";
 
 export default function Marketplace() {
 	// Chakra Color Mode
@@ -67,7 +68,7 @@ export default function Marketplace() {
 							direction={{ base: 'column', md: 'row' }}
 							align={{ base: 'start', md: 'center' }}>
 							<Text color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-								Trending NFTs
+								<T keyName='trending_nfts'>Trending NFTs</T>
 							</Text>
 							<Flex
 								align='center'
@@ -96,7 +97,7 @@ export default function Marketplace() {
 									Collectibles
 								</Link>
 								<Link color={textColorBrand} fontWeight='500' href='#sports'>
-									Sports
+									<T keyName='nft_category_sports'>Sports</T>
 								</Link>
 							</Flex>
 						</Flex>
@@ -104,7 +105,7 @@ export default function Marketplace() {
 							<NFT
 								name='Abstract Colors'
 								author='By Esthera Jackson'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+								bidders={[Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1]}
 								image={Nft1}
 								currentbid='0.91 ETH'
 								download='#'
@@ -112,7 +113,7 @@ export default function Marketplace() {
 							<NFT
 								name='ETH AI Brain'
 								author='By Nick Wilson'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+								bidders={[Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1]}
 								image={Nft2}
 								currentbid='0.91 ETH'
 								download='#'
@@ -120,7 +121,7 @@ export default function Marketplace() {
 							<NFT
 								name='Mesh Gradients '
 								author='By Will Smith'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+								bidders={[Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1]}
 								image={Nft3}
 								currentbid='0.91 ETH'
 								download='#'
@@ -133,7 +134,7 @@ export default function Marketplace() {
 							<NFT
 								name='Swipe Circles'
 								author='By Peter Will'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+								bidders={[Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1]}
 								image={Nft4}
 								currentbid='0.91 ETH'
 								download='#'
@@ -141,7 +142,7 @@ export default function Marketplace() {
 							<NFT
 								name='Colorful Heaven'
 								author='By Mark Benjamin'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+								bidders={[Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1]}
 								image={Nft5}
 								currentbid='0.91 ETH'
 								download='#'
@@ -149,7 +150,7 @@ export default function Marketplace() {
 							<NFT
 								name='3D Cubes Art'
 								author='By Manny Gates'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+								bidders={[Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1]}
 								image={Nft6}
 								currentbid='0.91 ETH'
 								download='#'
@@ -159,7 +160,7 @@ export default function Marketplace() {
 				</Flex>
 				<Flex flexDirection='column' gridArea={{ xl: '1 / 3 / 2 / 4', '2xl': '1 / 2 / 2 / 3' }}>
 					<Card px='0px' mb='20px'>
-						<TableTopCreators tableData={tableDataTopCreators}  />
+						<TableTopCreators tableData={tableDataTopCreators} />
 					</Card>
 					<Card p='0px'>
 						<Flex

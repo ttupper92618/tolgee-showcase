@@ -3,6 +3,12 @@
 import { NavLink, useLocation } from 'react-router-dom';
 // chakra imports
 import { Box, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react';
+import { T } from '@tolgee/react';
+import styled from '@emotion/styled';
+
+const IconWrapper = styled.div`
+	transform: translateY(3px);
+`;
 
 export function SidebarLinks(props: {
 	routes: RoutesType[];
@@ -24,7 +30,7 @@ export function SidebarLinks(props: {
 
 	// this function creates the links from the secondary accordions (for example auth -> sign-in -> default)
 	const createLinks = (
-		routes: RoutesType[], 
+		routes: RoutesType[],
 	) => {
 		return routes.map(
 			(
@@ -44,13 +50,15 @@ export function SidebarLinks(props: {
 											<Box
 												color={activeRoute(route.path.toLowerCase()) ? activeIcon : textColor}
 												me='18px'>
-												{route.icon}
+												<IconWrapper>
+													{route.icon}
+												</IconWrapper>
 											</Box>
 											<Text
 												me='auto'
 												color={activeRoute(route.path.toLowerCase()) ? activeColor : textColor}
 												fontWeight={activeRoute(route.path.toLowerCase()) ? 'bold' : 'normal'}>
-												{route.name}
+												<T keyName={`sidebar-${route.name}`}>{route.name}</T>
 											</Text>
 										</Flex>
 										<Box
@@ -71,7 +79,7 @@ export function SidebarLinks(props: {
 											me='auto'
 											color={activeRoute(route.path.toLowerCase()) ? activeColor : inactiveColor}
 											fontWeight={activeRoute(route.path.toLowerCase()) ? 'bold' : 'normal'}>
-											{route.name}
+											<T keyName={`sidebar-${route.name}`}>{route.name}</T>
 										</Text>
 										<Box h='36px' w='4px' bg='brand.400' borderRadius='5px' />
 									</HStack>

@@ -7,10 +7,9 @@ import App from './App';
 const tolgee = Tolgee()
   .use(DevTools())
   .use(FormatSimple())
-  .use(BrowserExtensionPlugin())
   .use(BackendFetch({ prefix: 'https://cdn.tolg.ee/f055354438add2878f63c6cacc0f7c5c' }))
   .init({
-    language: 'de',
+    language: 'en',
     apiUrl: process.env.REACT_APP_TOLGEE_API_URL,
     apiKey: process.env.REACT_APP_TOLGEE_API_KEY,
   });

@@ -2,6 +2,7 @@
 import { Box, Flex, Stack } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useTranslate } from "@tolgee/react";
+import { LangSelector } from 'components/languageSelector/languageSelector';
 
 //   Custom components
 import Links from 'components/sidebar/components/Links';
@@ -26,6 +27,14 @@ const SideBarNormalTitle = styled.div`
 	opacity: 0.70;
 `;
 
+const LanguageSwitcherWrapper = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 16px 16px 16px 30px;
+`;
+
 // FUNCTIONS
 function SidebarContent(props: { routes: RoutesType[] }) {
 	const { routes } = props;
@@ -42,6 +51,12 @@ function SidebarContent(props: { routes: RoutesType[] }) {
 					<Links routes={routes} />
 				</Box>
 			</Stack>
+
+			<Box>
+				<LanguageSwitcherWrapper>
+					<LangSelector />
+				</LanguageSwitcherWrapper>
+			</Box>
 		</Flex>
 	);
 }

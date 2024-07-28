@@ -1,5 +1,6 @@
 // Chakra imports
 import { AvatarGroup, Avatar, Box, Button, Flex, Icon, Image, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { T } from '@tolgee/react';
 // Custom components
 import Card from 'components/card/Card';
 // Assets
@@ -15,7 +16,7 @@ export default function NFT(props: {
 	currentbid: string | number;
 }) {
 	const { image, name, author, bidders, download, currentbid } = props;
-	const [ like, setLike ] = useState(false);
+	const [like, setLike] = useState(false);
 	const textColor = useColorModeValue('navy.700', 'white');
 	const textColorBid = useColorModeValue('brand.500', 'white');
 	return (
@@ -141,7 +142,7 @@ export default function NFT(props: {
 								borderRadius='70px'
 								px='24px'
 								py='5px'>
-								Place Bid
+								<T keyName='place_bid'>Place Bid</T>
 							</Button>
 						</Link>
 					</Flex>

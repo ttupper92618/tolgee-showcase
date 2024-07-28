@@ -1,5 +1,6 @@
 // Chakra imports
 import { Button, Flex, Link, Text } from '@chakra-ui/react';
+import { T } from '@tolgee/react';
 
 // Assets
 import banner from 'assets/img/nfts/NftBanner1.png';
@@ -28,7 +29,7 @@ export default function Banner() {
 				}}
 				fontWeight='700'
 				lineHeight={{ base: '32px', md: '42px' }}>
-				Discover, collect, and sell extraordinary NFTs
+				<T keyName='discover_card_title'>Discover, collect, and sell extraordinary NFTs</T>
 			</Text>
 			<Text
 				fontSize='md'
@@ -58,7 +59,7 @@ export default function Banner() {
 					py='20px'
 					px='27'
 					me='38px'>
-					Discover now
+					<T keyName='discover_now_btn'>Discover now</T>
 				</Button>
 				<Link>
 					<Text color='white' fontSize='sm' fontWeight='500'>
