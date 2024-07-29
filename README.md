@@ -1,118 +1,57 @@
-# [Horizon UI TypeScript ⚡️](https://horizon-ui.com/horizon-ui-chakra-ts) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://horizon-ui.com/&text=Check%20Horizon%20UI,%20the%20trendiest%20open-source%20admin%20template%20for%20Chakra%20UI%20&%20React!)
+# Togee Showcase
 
-![version](https://img.shields.io/badge/version-2.0.0-blue.svg)
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
-[![GitHub issues open](https://img.shields.io/github/issues/horizon-ui/horizon-ui-chakra-ts.svg?maxAge=2592000)](https://github.com/horizon-ui/horizon-ui-chakra-ts/issues?q=is%3Aopen+is%3Aissue)
+### Getting Started
 
-<p>&nbsp;</p>
+Clone the repo locally, and then create an .env.local file in the root of the app directory.  That file should have the following keys in it:
 
-[<img alt="Horizon UI TypeScript" src="https://i.ibb.co/KV6FDvK/introduction-image-ts.png" /> ](https://github.com/horizon-ui/horizon-ui-chakra-ts)
+```
+REACT_APP_TOLGEE_API_URL=https://app.tolgee.io
+REACT_APP_TOLGEE_API_KEY=<API KEY>
+```
+You can obtain provide your own API key or if working in an organization, obtain it from within that organization as appropriate.
 
-<p>&nbsp;</p>
+After setting up the .env, install the dependencies:
 
-
-Get started and build your dream web app with Horizon UI, the most trendiest &
-innovative Open Source Admin Template for Chakra UI & React!
-
----
-
-### Introduction
-
-Designed for those who like modern UI elements and beautiful websites. Made of
-hundred of elements, designed blocks and fully coded pages, Horizon UI is ready
-to help you create stunning websites and webapps.
-
-Save hundreds of hours trying to create and develop a dashboard from scratch.
-The fastest, most responsive & trendiest dashboard is here. Seriously.
-
-With Horizon UI you will find many examples for pages like NFTs Pages,
-Authentication Pages, Profile and so on. Just choose between a Basic Design or a
-cover and you are good to go!
-
-### 🎉 [NEW] React Tables V8
-Horizon is also using the latest version of the React Tables (v8) library, you can access it by cloning the [/feature/react-table-v8](https://github.com/horizon-ui/horizon-ui-chakra-ts/tree/feature/react-table-v8) branch!
-
-### 🎉 [NEW] Horizon UI Components
-All the main components from both versions, this will help you to see and interact with all & the latest added components of Horizon (also, new components are on the way, stay tuned)! ⚡️
-<a href="https://horizon-ui.com/components/?ref=readme-horizon-ts" target="_blank">See all components</a>
-
-
-### Documentation
-
-Each element is well presented in a very complex documentation. You can read
-more about the <a href="https://horizon-ui.com/documentation/docs/introduction?ref=readme-horizon-ts" target="_blank">documentation
-here.</a>
-
-### Quick Start
-
-Install Horizon UI by running either of the following:
-
-- Install NodeJS LTS from
-  [NodeJs Official Page](https://nodejs.org/en/?ref=horizon-documentation)
-  (NOTE: Product only works with LTS version)
-
-Clone the repository with the following command:
-
-```bash
-git clone https://github.com/horizon-ui/horizon-ui-chakra-ts.git
+```
+npm i
 ```
 
-Run in terminal this command:
+### Running the App
 
-```bash
-npm install
+After having installed dependencies and set up the local environment, you can run the app by executing this:
+
 ```
-
-Then run this command to start your local server
-
-```bash
 npm start
 ```
 
-### Example Pages
+The app will spin up on port 3000. It will also spin up a node server on port 8443 (unused at present).
 
-If you want to get inspiration or just show something directly to your clients,
-you can jump start your development with our pre-built example pages. You will
-be able to quickly set up the basic structure for your web project. View
-<a href="https://horizon-ui.com/horizon-ui-chakra-ts/?ref=readme-horizon-ts" target="_blank">example
-pages here.</a>
+## Adding the Browser Plugin for Local Inspection of Nodes
 
-### Versions
+You can install the chrome browser plugin by downloading it from the Chrome web store: https://chromewebstore.google.com/search/Tolgee%20Tools?hl=en-US&utm_source=ext_sidebar
 
-| Free Version                                                                                                       | PRO Version                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| [![Horizon UI](https://i.ibb.co/KV6FDvK/introduction-image-ts.png)](https://www.horizon-ui.com/?ref=readme-horizon-ts) | [![Horizon UI PRO](https://i.ibb.co/R6jFKRM/introduction-image-1.png)](https://www.horizon-ui.com/pro?ref=readme-horizon-ts) |
+By installing this plugin, you will gain access to in-context editing of Tolgee translations.
 
-### Figma Version
+### Plugin Setup
 
-Horizon UI is available in Figma format as well! Check it out on Figma
-Community! 🎨
-[See the Horizon UI Figma design files](https://bit.ly/horizon-figma)
+Once the plugin is installed, activate it by clicking on the plugins icon next to the Chroms search bar:
 
-### Reporting Issues
+![](./md_images/plugin1.png?raw=true "")
 
-We use GitHub Issues as the official bug tracker for the Horizon UI. Here are
-some advices for our users that want to report an issue:
+Select the `Tolgee Tools` item and you will see a dialog allowing you to enter your project details:
 
-1. Make sure that you are using the latest version of the Horizon UI Dashbaord.
-   Check the CHANGELOG from your dashboard on our
-   [CHANGE LOG File](https://github.com/horizon-ui/horizon-ui-chakra-ts/blob/main/CHANGELOG.md?ref=readme-horizon-ts).
-2. Providing us reproducible steps for the issue will shorten the time it takes
-   for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you
-   encountered the issue might help.
+![](./md_images/plugin2.png?raw=true "")
 
----
+As an example, you can enter `https://app.tolgee.io` for the API URL if you are using a histed Tolgee instance. Obtain the key as is appropriate for your organization.
 
-### Community
+Once the plugin is installed, when viewing this app you can hold down the `option` or `alt` key and a window allowing in-context translations will appear:
 
-Connect with the community! Feel free to ask questions, report issues, and meet
-new people that already use Horizon UI!
+![](./md_images/incontext.png?raw=true "")
 
-💬 [Join the #HorizonUI Discord Community!](https://discord.gg/f6tEKFBd4m)
+You can change any of the translations for a given key, and also for any node wrapped by Tolegee's `T` component you can simply enter an english language string and hit save; Tolgee will automatcally create the key and all of the associated translations across every supported language.
 
-### Copyright and license
+## Figma Plugin
 
-⭐️ [Copyright 2022 Simmmple ](https://www.simmmple.com/?ref=readme-horizon-ts)
+You can get started with the Figma plugin by following the directions here: https://www.figma.com/community/plugin/1212381421658754793/tolgee-localization
 
-📄 [Horizon UI License](https://www.simmmple.com/licenses?ref=readme-horizon-ts)
+The figma files for the sample app can be obtained here: https://www.figma.com/community/file/1098131983383434513/horizon-ui-trendiest-open-source-admin-template-dashboard
