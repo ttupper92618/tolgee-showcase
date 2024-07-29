@@ -4,6 +4,8 @@ import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Link, Text, useC
 import { useState, useEffect } from 'react';
 import AdminNavbarLinks from 'components/navbar/NavbarLinksAdmin';
 import { T } from '@tolgee/react';
+import { useLocation } from 'react-router-dom';
+import routes from 'routes';
 
 export default function AdminNavbar(props: {
 	secondary: boolean;
@@ -13,7 +15,9 @@ export default function AdminNavbar(props: {
 	fixed: boolean;
 	onOpen: (...args: any[]) => any;
 }) {
+	const location = useLocation();
 	const [scrolled, setScrolled] = useState(false);
+	const [routName, setRouteName] = useState('');
 
 	useEffect(() => {
 		window.addEventListener('scroll', changeNavbar);
@@ -23,7 +27,19 @@ export default function AdminNavbar(props: {
 		};
 	});
 
-	const { secondary, brandText } = props;
+	useEffect(() => {
+		let displayRoute = '';
+
+		routes.forEach((route) => {
+			if (location.pathname.includes(route.path)) {
+				displayRoute = route.name;
+			};
+		});
+
+		setRouteName(displayRoute);
+	}, [location.pathname]);
+
+	const { secondary } = props;
 
 	// Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
 	let mainText = useColorModeValue('navy.700', 'white');
@@ -105,7 +121,7 @@ export default function AdminNavbar(props: {
 
 						<BreadcrumbItem color={secondaryText} fontSize='sm'>
 							<BreadcrumbLink href='#' color={secondaryText} transform='translateY(-3px)'>
-								<T keyName={`nav-page-${brandText}`}>{brandText}</T>
+								<T keyName={`nav-page-${routName}`}>{routName}</T>
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 					</Breadcrumb>
@@ -126,7 +142,7 @@ export default function AdminNavbar(props: {
 						_focus={{
 							boxShadow: 'none'
 						}}>
-						<T keyName={`nav-title-${brandText}`}>{brandText}</T>
+						<T keyName={`nav-title-${routName}`}>{routName}</T>
 					</Link>
 				</Box>
 				<Box ms='auto' w={{ sm: '100%', md: 'unset' }}>

@@ -6,7 +6,7 @@ import Navbar from 'components/navbar/NavbarAdmin';
 import Sidebar from 'components/sidebar/Sidebar';
 import { SidebarContext } from 'contexts/SidebarContext';
 import { useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Router, Routes } from 'react-router-dom';
 import routes from 'routes';
 
 // Custom Chakra theme
@@ -65,6 +65,7 @@ export default function Dashboard(props: { [x: string]: any }) {
   };
   document.documentElement.dir = 'ltr';
   const { onOpen } = useDisclosure();
+
   return (
     <Box>
       <SidebarContext.Provider

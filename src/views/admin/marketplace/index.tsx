@@ -80,7 +80,7 @@ export default function Marketplace() {
 									fontWeight='500'
 									me={{ base: '34px', md: '44px' }}
 									href='#art'>
-									Art
+									<T keyName='nft_category_art'>Art</T>
 								</Link>
 								<Link
 									color={textColorBrand}

@@ -5,12 +5,14 @@ import {
   MdHome,
   MdLock,
   MdOutlineShoppingCart,
+  MdCloud,
 } from 'react-icons/md';
 
 // Admin Imports
 import MainDashboard from 'views/admin/default';
 import NFTMarketplace from 'views/admin/marketplace';
 import Profile from 'views/admin/profile';
+import API from 'views/admin/api';
 import DataTables from 'views/admin/dataTables';
 import RTL from 'views/admin/rtl';
 
@@ -53,6 +55,13 @@ const routes = [
     path: '/profile',
     icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
     component: <Profile />,
+  },
+  {
+    name: 'API',
+    layout: '/admin',
+    path: '/api',
+    icon: <Icon as={MdCloud} width="20px" height="20px" color="inherit" />,
+    component: <API />,
   },
   {
     name: 'Sign In',
